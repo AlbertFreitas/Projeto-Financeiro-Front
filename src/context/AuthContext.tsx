@@ -16,7 +16,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 const [authState, setAuthState] = useState<AuthState>({
         user: null,
         error: null,
-        loading: false
+        // marcar como loading até que o onAuthStateChanged retorne o estado real
+        loading: true
     });
 
  

@@ -1,6 +1,8 @@
 import type { JSX } from "react";
 import Button from "../components/Button";
 import { Wallet, TrendingUp, List, CreditCard } from "lucide-react";
+import { useNavigate } from "react-router";
+
 
 interface Feature {
     icon: JSX.Element;
@@ -9,6 +11,8 @@ interface Feature {
 }
 
 const Home = () => {
+
+    const navigate = useNavigate();
 
     const features: ReadonlyArray<Feature> = [
     {
@@ -48,8 +52,8 @@ const Home = () => {
                                 Gerencie suas Finanças com o <span className="text-primary-500">DevBils</span></h1>
                             <p>Uma plataforma simples e eficiente para controlar suas despesas e receitas. Organize suas finanças pessoais ou do seu negócio com facilidade.</p>
                             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-3.5">
-                                <Button variant="primary" className="text-center px-6 py-3">Começar Agora</Button>
-                            </div>
+                                <Button variant="primary" className="text-center px-6 py-3" onClick={() => navigate("/login")}>Começar Agora</Button>
+                            </div> 
                         </div>
                     </div>
                 </section>
@@ -99,7 +103,7 @@ const Home = () => {
                     <div className="bg-gray-900 p-9 md:p-12 rounded-xl text-center border border-gray-700">
                         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Pronto para organizar suas finanças?</h2>
                         <p className="text-white text-opacity-90 max-w-2xl mx-auto mb-8">Comece a usar o DevBills hoje mesmo e tenha o controle total sobre seu dinheiro. É gratuito e fácil de usar!</p>
-                        <Button className="mx-auto px-6 py-3">Criar Conta Gratuita</Button>
+                        <Button className="mx-auto px-6 py-3" onClick={() => navigate("/login")}>Criar Conta Gratuita</Button>
                     </div>
                 </section>
             </div>
